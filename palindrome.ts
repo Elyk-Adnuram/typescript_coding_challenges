@@ -17,8 +17,21 @@ const palindrome2 = (str: string): boolean => {
   else return false;
 };
 
+//solution using every() array method
+const palindromeCheck = (str: string): boolean => {
+  //every takes a callback with each char and index as params
+  return str
+    .toLowerCase()
+    .split("")
+    .every((char, index) => {
+      // check that each char in the array matches the mirrored char
+      return char === str[str.length - index - 1];
+    });
+};
+
 //calling functions
 console.log(palindrome("anna")); //output true
 console.log(palindrome2("anna")); //output true
 console.log(palindrome("bo-katan")); //output false
 console.log(palindrome2("moff")); //output false
+console.log(palindromeCheck("bob")); // output true
