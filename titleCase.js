@@ -10,3 +10,12 @@ function capitalize(str) {
 }
 console.log(capitalize("this is an example sentence."));
 console.log(capitalize("what is titlecase"));
+//solution 2 using regex expression
+function capitalizeFirstLetters(str) {
+    return str
+        .toLowerCase()
+        .split(/\s+/) // Split on one or more whitespace characters
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter and join
+        .join(" ");
+}
+console.log(capitalizeFirstLetters("this is a sentence"));
