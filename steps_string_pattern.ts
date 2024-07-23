@@ -12,7 +12,7 @@ function steps(n: number): void {
   }
 }
 
-steps(3);
+// steps(3);
 //output
 // #
 // ##
@@ -29,3 +29,21 @@ function steps2(n: number): void {
     console.log(step.padEnd(n * 2 - 1)); // Adjust padding length for alignment
   }
 }
+
+//solution using nested loop
+function steps3(n: number): void {
+  //outer loop
+  for (let row = 1; row <= n; row++) {
+    let step = "";
+    //inner loop
+    for (let col = 1; col <= row; col++) {
+      if (col <= row) {
+        step += "#";
+      } else {
+        step += " ";
+      }
+    }
+    console.log(step);
+  }
+}
+steps3(3);
